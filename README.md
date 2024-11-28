@@ -6,7 +6,7 @@ Docente: Ângelo Amâncio Duarte </h3>
 
 <div align="justify"> 
 <h2> Resumo </h2>
-O projeto em questão visa desenvolver um jogo semelhante ao tetris utilizando a linguagem de programação C, e a placa FPGA DE1-SoC para interação com o usuário, sendo que é utilizado o acelerômetro da placa para obter os movimentos desejados pelo usuário para as peças, assim como os botões da placa para permitir que o jogador interaja com o menu, pause o jogo, e gire as peças. Além disso, é utilizada sua saída VGA para apresentar a interface gráfica do jogo no monitor com a resolução de 640x480.
+O projeto em questão visa desenvolver um jogo Pong utilizando a linguagem de programação C e a placa FPGA DE1-SoC para interação com os jogadores. O acelerômetro da placa é utilizado para controlar os movimentos verticais da barra do Player 1, enquanto o mouse do computador permite que o Player 2 controle sua barra. Além disso, os botões da FPGA são usados para funcionalidades adicionais, como iniciar o jogo ou reiniciá-lo após uma partida. A interface gráfica é apresentada no monitor por meio da saída VGA da placa, com resolução de 640x480, proporcionando uma experiência visual clara e responsiva. O objetivo do jogo é simples e clássico: o primeiro jogador a atingir 7 pontos vence a partida.
 </div>
 
 <h2> Sumário </h2>
@@ -63,14 +63,17 @@ O projeto em questão visa desenvolver um jogo semelhante ao tetris utilizando a
 <h3 id="movimento-das-peças---acelerômetro">1. Movimento do Player 1 - Acelerômetro</h3>
 <p>O <strong>acelerômetro</strong> da DE1-SoC é utilizado para capturar os movimentos do player 1 no eixo vertical (cima e baixo). Ao inclinar a placa levemente para cima ou para baixo, as peças se movem de forma correspondente dentro da área de jogo. Este método de controle adiciona uma interatividade física ao jogo, tornando a experiência mais dinâmica e intuitiva.</p>
 
-<h3 id="controle-de-rotação-e-interações-com-o-menu---botões">2. Interações com o Menu - Botões</h3>
+<h3 id="movimento-das-peças---mouse">2. Movimento do Player 2 - Mouse</h3>
+<p>O mouse do computador é utilizado para controlar os movimentos do player 2 no eixo vertical (cima e baixo). Ao mover o cursor para cima ou para baixo na tela, a barra correspondente se desloca na mesma direção dentro da área de jogo.</p>
+
+<h3 id="controle-de-rotação-e-interações-com-o-menu---botões">3. Botões</h3>
 <p><strong>Botões</strong> da placa são utilizados para outras funcionalidades, como:</p>
 <ul>
 <li><strong>Interação com o menu</strong>: Um botão é reservado para navegar pelas opções de menu, como iniciar o jogo ou sair.</li>
 <li><strong>Pausa</strong>: Outro botão é dedicado à função de pausar e retomar o jogo conforme necessário.</li>
 </ul>
 
-<h3 id="exibição-gráfica---saída-vga">3. Exibição Gráfica - Saída VGA</h3>
+<h3 id="exibição-gráfica---saída-vga">4. Exibição Gráfica - Saída VGA</h3>
 <p>A interface gráfica do jogo é exibida através da <strong>saída VGA</strong>, permitindo que o jogo seja visualizado em um monitor externo. O monitor utiliza uma resolução de <strong>640x480</strong>, o que oferece uma experiência visual simples e eficiente para o Tetris. A área de jogo é clara e visível, com cores distintas entre as peças que estão caindo, e as que já estão posicionadas, e um layout de fácil compreensão.</p>
 
 <h2 id="makefile">MakeFile</h2>
