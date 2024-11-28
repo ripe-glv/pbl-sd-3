@@ -1,5 +1,5 @@
-<h1 align="center"> Tetris </h1>
-<h3 align="center"> Desenvolvimento do Jogo Tetris para o kit de desenvolvimento DE1-SoC para a disciplina de Sistemas Digitais </h3>
+<h1 align="center"> Pong </h1>
+<h3 align="center"> Desenvolvimento do Jogo Pong para o kit de desenvolvimento DE1-SoC para a disciplina de Sistemas Digitais </h3>
 <h3 align="center"> Equipe: <a href="https://github.com/Danlrs">Daniel Lucas Rios da Silva</a>, <a href="https://github.com/ripe-glv">Filipe Carvalho Matos Galvão</a>, <a href="https://github.com/luanbsc">Luan Barbosa dos Santos Costa</a><br>
 Docente: Ângelo Amâncio Duarte </h3>
 <hr>
@@ -55,19 +55,18 @@ O projeto em questão visa desenvolver um jogo semelhante ao tetris utilizando a
 <p>O Visual Studio Code é um editor de código leve, extensível e com suporte a várias linguagens e ferramentas de desenvolvimento. Para este projeto, o VS Code foi configurado com extensões para C/C++, integração com o GCC e GDB, além de suporte ao desenvolvimento remoto, permitindo a edição, compilação e depuração do código diretamente no ambiente da DE1-SoC.</p>
 
 <h2 id="funcionamento-do-jogo">Funcionamento do Jogo</h2>
-<p>O <strong>Tetris</strong> é um jogo em que o jogador organiza peças de formatos variados que caem de forma contínua na tela. O objetivo é movimentar e rotacionar essas peças para formar linhas horizontais completas, que são removidas, concedendo pontos ao jogador. O jogo termina quando as peças se acumulam e alcançam o topo da área de jogo.</p>
+<p>O jogo <strong>Pong</strong> recria a experiência clássica do arcade com controles adaptados. Ele é composto por duas barras (uma para cada jogador) e uma bola que se move pela tela. O objetivo é rebater a bola, evitando que ela ultrapasse sua barra, ao mesmo tempo tentando fazer com que ela passe pela barra do adversário. Neste jogo, o Player 1 controla a barra usando o acelerômetro. Movimentos físicos na placa, como inclinação, determinam a direção vertical da barra. Já o Player 2 utiliza o mouse para movimentar sua barra na mesma direção. A bola começa no centro da tela e se desloca em linha reta com velocidade constante, mudando de direção ao colidir com as bordas superiores ou inferiores da tela, ou ao ser rebatida por uma das barras. Caso a bola ultrapasse uma das barras, o jogador adversário marca um ponto. O jogo segue até que um dos jogadores alcance 7 pontos, consagrando-se vencedor.</p>
 
 <h2 id="interface-e-controles">Interface e Controles</h2>
 <p>Neste projeto, foram integrados vários periféricos da DE1-SoC para a interação com o jogo, conforme detalhado abaixo:</p>
 
-<h3 id="movimento-das-peças---acelerômetro">1. Movimento das Peças - Acelerômetro</h3>
-<p>O <strong>acelerômetro</strong> da DE1-SoC é utilizado para capturar os movimentos das peças no eixo horizontal (esquerda e direita) assim como no eixo vertical, para acelerar a queda da peça. Ao inclinar a placa levemente para a esquerda, direita, ou para baixo, as peças se movem de forma correspondente dentro da área de jogo. Este método de controle adiciona uma interatividade física ao jogo, tornando a experiência mais dinâmica e intuitiva.</p>
+<h3 id="movimento-das-peças---acelerômetro">1. Movimento do Player 1 - Acelerômetro</h3>
+<p>O <strong>acelerômetro</strong> da DE1-SoC é utilizado para capturar os movimentos do player 1 no eixo vertical (cima e baixo). Ao inclinar a placa levemente para cima ou para baixo, as peças se movem de forma correspondente dentro da área de jogo. Este método de controle adiciona uma interatividade física ao jogo, tornando a experiência mais dinâmica e intuitiva.</p>
 
-<h3 id="controle-de-rotação-e-interações-com-o-menu---botões">2. Controle de Rotação e Interações com o Menu - Botões</h3>
+<h3 id="controle-de-rotação-e-interações-com-o-menu---botões">2. Interações com o Menu - Botões</h3>
 <p><strong>Botões</strong> da placa são utilizados para outras funcionalidades, como:</p>
 <ul>
-<li><strong>Rotação das peças</strong>: Pressionar um botão específico permite girar a peça atual, facilitando seu encaixe no tabuleiro.</li>
-<li><strong>Interação com o menu</strong>: Um botão é reservado para navegar pelas opções de menu, como iniciar o jogo ou ajustar configurações.</li>
+<li><strong>Interação com o menu</strong>: Um botão é reservado para navegar pelas opções de menu, como iniciar o jogo ou sair.</li>
 <li><strong>Pausa</strong>: Outro botão é dedicado à função de pausar e retomar o jogo conforme necessário.</li>
 </ul>
 
