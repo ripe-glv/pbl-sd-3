@@ -20,7 +20,8 @@ O projeto em questão visa desenvolver um jogo Pong utilizando a linguagem de pr
   - [Visual Studio Code (VS Code)](#visual-studio-code-vs-code)
 - [Funcionamento do Jogo](#funcionamento-do-jogo)
 - [Interface e Controles](#interface-e-controles)
-  - [Movimento das Peças - Acelerômetro](#movimento-das-peças---acelerômetro)
+  - [Movimento do Player 1 - Acelerômetro](#movimento-das-peças---acelerômetro)
+  - [Movimento do Player 2 - Mouse](#movimento-das-peças---mouse)
   - [Controle de Rotação e Interações com o Menu - Botões](#controle-de-rotação-e-interações-com-o-menu---botões)
   - [Exibição Gráfica - Saída VGA](#exibição-gráfica---saída-vga)
 - [MakeFile](#makefile)
@@ -40,7 +41,7 @@ O projeto em questão visa desenvolver um jogo Pong utilizando a linguagem de pr
 </ul>
 
 <h3 id="unidade-de-processamento-gráfico-baseada-em-fpga">Unidade de Processamento Gráfico Baseada em FPGA</h3>
-<p>O projeto utiliza uma unidade de processamento gráfico (GPU) desenvolvida para plataformas FPGA, projetada para jogos 2D. Esta GPU facilita o controle de sprites e a renderização de gráficos em tempo real com uma arquitetura baseada em sprites e suporte ao padrão VGA. A estrutura inclui módulos dedicados para sincronização de vídeo, gerenciamento de sprites e renderização de polígonos, permitindo uma exibição gráfica detalhada em resolução 640x480. Para o Tetris, aproveitamos o recurso de background desta GPU, que permite desenhar elementos de cenário de maneira otimizada, possibilitando a atualização eficiente dos blocos e da interface do jogo diretamente no hardware.</p>
+<p>O projeto utiliza uma unidade de processamento gráfico (GPU) desenvolvida para plataformas FPGA, projetada para jogos 2D. Esta GPU facilita o controle de sprites e a renderização de gráficos em tempo real com uma arquitetura baseada em sprites e suporte ao padrão VGA. A estrutura inclui módulos dedicados para sincronização de vídeo, gerenciamento de sprites e renderização de polígonos, permitindo uma exibição gráfica detalhada em resolução 640x480. Para o Pong, aproveitamos os recursos de background, sprites e polígonos desta GPU, que permite desenhar elementos de cenário de maneira otimizada, possibilitando a atualização eficiente dos blocos e da interface do jogo diretamente no hardware.</p>
 
 <h3 id="linguagem-c">Linguagem C</h3>
 <p>A linguagem C foi escolhida por sua eficiência e pelo controle direto que oferece sobre os recursos de hardware, o que é fundamental para o desenvolvimento de sistemas embarcados e jogos com interação direta com o hardware. Além disso, o C é amplamente suportado em plataformas de FPGA e permite o uso de bibliotecas específicas para controle dos periféricos.</p>
@@ -49,7 +50,7 @@ O projeto em questão visa desenvolver um jogo Pong utilizando a linguagem de pr
 <p>O GNU Compiler Collection (GCC) é um compilador popular para várias linguagens, incluindo C. Utilizamos o GCC para compilar o código C para o processador ARM da DE1-SoC, traduzindo o código-fonte em um binário executável que pode ser executado diretamente no hardware.</p>
 
 <h3 id="gdb-gnu-debugger">GDB (GNU Debugger)</h3>
-<p>O GNU Debugger (GDB) é uma ferramenta essencial para depuração, permitindo identificar e resolver problemas no código durante a execução. Com o GDB, é possível analisar o fluxo de execução, inspecionar variáveis e modificar o estado do programa em tempo real, facilitando o processo de depuração do jogo Tetris.</p>
+<p>O GNU Debugger (GDB) é uma ferramenta essencial para depuração, permitindo identificar e resolver problemas no código durante a execução. Com o GDB, é possível analisar o fluxo de execução, inspecionar variáveis e modificar o estado do programa em tempo real, facilitando o processo de depuração do jogo Pong</p>
 
 <h3 id="visual-studio-code-vs-code">Visual Studio Code (VS Code)</h3>
 <p>O Visual Studio Code é um editor de código leve, extensível e com suporte a várias linguagens e ferramentas de desenvolvimento. Para este projeto, o VS Code foi configurado com extensões para C/C++, integração com o GCC e GDB, além de suporte ao desenvolvimento remoto, permitindo a edição, compilação e depuração do código diretamente no ambiente da DE1-SoC.</p>
@@ -74,13 +75,13 @@ O projeto em questão visa desenvolver um jogo Pong utilizando a linguagem de pr
 </ul>
 
 <h3 id="exibição-gráfica---saída-vga">4. Exibição Gráfica - Saída VGA</h3>
-<p>A interface gráfica do jogo é exibida através da <strong>saída VGA</strong>, permitindo que o jogo seja visualizado em um monitor externo. O monitor utiliza uma resolução de <strong>640x480</strong>, o que oferece uma experiência visual simples e eficiente para o Tetris. A área de jogo é clara e visível, com cores distintas entre as peças que estão caindo, e as que já estão posicionadas, e um layout de fácil compreensão.</p>
+<p>A interface gráfica do jogo é exibida através da <strong>saída VGA</strong>, permitindo que o jogo seja visualizado em um monitor externo. O monitor utiliza uma resolução de <strong>640x480</strong>, o que oferece uma experiência visual simples e eficiente para o Pong. A área de jogo é clara e visível, com cores distintas entre as peças que representam os players, e um layout de fácil compreensão.</p>
 
 <h2 id="makefile">MakeFile</h2>
 <p>O <strong>MakeFile</strong> é usado para gerenciar a compilação do código do jogo e facilitar o processo de geração do executável para a placa DE1-SoC. Esse arquivo contém comandos que automatizam a construção do projeto, configurando e compilando o código-fonte, e gerando o binário final a ser carregado na placa.</p>
 
 <h2 id="conclusão">Conclusão</h2>
-<p>Este projeto demonstrou a integração de hardware e software para criar uma versão do jogo Tetris com uma experiência física de controle, aproveitando o acelerômetro e botões do kit DE1-SoC. O projeto enfatiza a viabilidade de construir uma aplicação interativa com recursos de programação embarcada e controles alternativos.</p>
+<p>Este projeto demonstrou a integração de hardware e software para criar uma versão do jogo Pong com uma experiência física de controle, aproveitando o mouse, além do acelerômetro e botões do kit DE1-SoC. O projeto enfatiza a viabilidade de construir uma aplicação interativa com recursos de programação embarcada e controles alternativos.</p>
 
 <h2 id="referências">Referências</h2>
 <p>ALVES, Gabriel B. S.; DIAS, Anfranserai M.; SARINHO, Victor T. Desenvolvimento de uma Arquitetura Baseada em Sprites para Criação de Jogos 2D em Ambientes Reconfiguráveis utilizando dispositivos FPGA. Universidade Estadual de Feira de Santana, Feira de Santana, Bahia, Brasil.</p>
