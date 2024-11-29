@@ -57,7 +57,9 @@ O projeto em questão visa desenvolver um jogo Pong utilizando a linguagem de pr
 
 <h2 id="funcionamento-do-jogo">Funcionamento do Jogo</h2>
 
+<div align="center">
 ![Jogo em execução](Pong.gif)
+</div>
 
 <p>O jogo <strong>Pong</strong> recria a experiência clássica do arcade com controles adaptados. Ele é composto por duas barras (uma para cada jogador) e uma bola que se move pela tela. O objetivo é rebater a bola, evitando que ela ultrapasse sua barra, ao mesmo tempo tentando fazer com que ela passe pela barra do adversário. Neste jogo, o Player 1 controla a barra usando o acelerômetro. Movimentos físicos na placa, como inclinação, determinam a direção vertical da barra. Já o Player 2 utiliza o mouse para movimentar sua barra na mesma direção. A bola começa no centro da tela e se desloca em linha reta com velocidade constante, mudando de direção ao colidir com as bordas superiores ou inferiores da tela, ou ao ser rebatida por uma das barras. Caso a bola ultrapasse uma das barras, o jogador adversário marca um ponto. O jogo segue até que um dos jogadores alcance 7 pontos, consagrando-se vencedor.</p>
 
